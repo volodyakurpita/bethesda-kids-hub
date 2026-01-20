@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bethesda Kids Hub</title>
+  <style>
+    :root {
+      --primary: #1e6f7c;
+      --accent: #f5b400;
+      --bg: #f9fbfb;
+      --text: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      height: 56px;
+    }
+
+    .lang-switch {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .hero {
+      position: relative;
+      padding: 140px 20px;
+      text-align: center;
+      max-width: 100%;
+      margin: 0 auto;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 111, 124, 0.55);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .cta {
+      padding: 14px 32px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+
+    .feature {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #ffffff;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="main_horizontal_retina.png" alt="Bethesda Kids Hub" />
+  <button class="lang-switch" onclick="toggleLang()" id="langBtn">EN</button>
+</header>
+
+<main>
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="kids-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+    <h1 data-i18n="title">Безпечний дитячий простір</h1>
+    <p data-i18n="subtitle">Місце, де діти зростають у любові, турботі та довірі</p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap">
+      <button class="cta" data-i18n="cta_child">Записати дитину</button>
+      <button class="cta" style="background:#1e6f7c;color:#fff" data-i18n="cta_partner">Стати партнером</button>
+    </div>
+      </div>
+  </div>
+
+  <section>
+    <h2 data-i18n="about_title" style="text-align:center">Про Bethesda Kids Hub</h2>
+    <p data-i18n="about_text" style="text-align:center;max-width:700px;margin:20px auto">
+      Bethesda Kids Hub — це дитячий простір при церкві, створений для розвитку, підтримки та безпеки дітей різного віку.
+    </p>
+  </section>
+
+  <section>
+    <h2 data-i18n="features_title" style="text-align:center">Що ми даємо дітям</h2>
+    <div class="features">
+      <div class="feature">
+        <h3 data-i18n="f1_title">Любов і прийняття</h3>
+        <p data-i18n="f1_text">Кожна дитина важлива і почута</p>
+      </div>
+      <div class="feature">
+        <h3 data-i18n="f2_title">Розвиток і навчання</h3>
+        <p data-i18n="f2_text">Ігри, навчання та творчість</p>
+      </div>
+      <div class="feature">
+        <h3 data-i18n="f3_title">Безпечне середовище</h3>
+        <p data-i18n="f3_text">Фізична та емоційна безпека дітей</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="join_title" style="text-align:center">Як долучитись</h2>
+    <div class="features">
+      <div class="feature">
+        <h3 data-i18n="join_child">Для дітей</h3>
+        <p data-i18n="join_child_text">Регулярні заняття, ігри та події для дітей різного віку</p>
+      </div>
+      <div class="feature">
+        <h3 data-i18n="join_parent">Для батьків</h3>
+        <p data-i18n="join_parent_text">Спільнота, довіра та підтримка у вихованні</p>
+      </div>
+      <div class="feature">
+        <h3 data-i18n="join_partner">Для партнерів</h3>
+        <p data-i18n="join_partner_text">Фінансова підтримка, матеріали або спільні ініціативи</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="support_title" style="text-align:center">Підтримати простір</h2>
+    <p data-i18n="support_text" style="text-align:center;max-width:700px;margin:20px auto">
+      Ви можете підтримати Bethesda Kids Hub як донор, спонсор або довгостроковий партнер.
+    </p>
+    <div style="text-align:center">
+      <button class="cta" data-i18n="cta_support">Підтримати</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Bethesda Kids Hub
+</footer>
+
+<script>
+  let currentLang = 'uk';
+
+  const translations = {
+    uk: {
+      title: 'Безпечний дитячий простір',
+      subtitle: 'Місце, де діти зростають у любові, турботі та довірі',
+      cta_child: 'Записати дитину',
+      cta_partner: 'Стати партнером',
+      about_title: 'Про Bethesda Kids Hub',
+      about_text: 'Bethesda Kids Hub — це дитячий простір при церкві, створений для розвитку, підтримки та безпеки дітей різного віку.',
+      features_title: 'Що ми даємо дітям',
+      f1_title: 'Любов і прийняття',
+      f1_text: 'Кожна дитина важлива і почута',
+      f2_title: 'Розвиток і навчання',
+      f2_text: 'Ігри, навчання та творчість',
+      f3_title: 'Безпечне середовище',
+      f3_text: 'Фізична та емоційна безпека дітей',
+      join_title: 'Як долучитись',
+      join_child: 'Для дітей',
+      join_child_text: 'Регулярні заняття, ігри та події для дітей різного віку',
+      join_parent: 'Для батьків',
+      join_parent_text: 'Спільнота, довіра та підтримка у вихованні',
+      join_partner: 'Для партнерів',
+      join_partner_text: 'Фінансова підтримка, матеріали або спільні ініціативи',
+      support_title: 'Підтримати простір',
+      support_text: 'Ви можете підтримати Bethesda Kids Hub як донор, спонсор або довгостроковий партнер.',
+      cta_support: 'Підтримати'
+    },
+    en: {
+      title: 'A safe space for children',
+      subtitle: 'A place where children grow in love, care, and trust',
+      cta_child: 'Enroll a child',
+      cta_partner: 'Become a partner',
+      about_title: 'About Bethesda Kids Hub',
+      about_text: 'Bethesda Kids Hub is a church-based children’s space focused on growth, care, and safety for kids of all ages.',
+      features_title: 'What we offer children',
+      f1_title: 'Love and acceptance',
+      f1_text: 'Every child matters and is heard',
+      f2_title: 'Growth and learning',
+      f2_text: 'Play, learning, and creativity',
+      f3_title: 'Safe environment',
+      f3_text: 'Physical and emotional safety for children',
+      join_title: 'How to get involved',
+      join_child: 'For children',
+      join_child_text: 'Regular activities, play, and events for different age groups',
+      join_parent: 'For parents',
+      join_parent_text: 'Community, trust, and support in parenting',
+      join_partner: 'For partners',
+      join_partner_text: 'Financial support, resources, or joint initiatives',
+      support_title: 'Support the space',
+      support_text: 'You can support Bethesda Kids Hub as a donor, sponsor, or long-term partner.',
+      cta_support: 'Support us'
+    }
+  };
+
+  function toggleLang() {
+    currentLang = currentLang === 'uk' ? 'en' : 'uk';
+    document.documentElement.lang = currentLang;
+    document.getElementById('langBtn').innerText = currentLang === 'uk' ? 'EN' : 'UA';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.innerText = translations[currentLang][key];
+    });
+  }
+</script>
+
+</body>
+</html>
